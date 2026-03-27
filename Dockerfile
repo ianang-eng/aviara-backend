@@ -1,10 +1,9 @@
-FROM python:3.11-slim
+ROM python:3.11
 
-# Install system dependencies required by librosa / soundfile
 RUN apt-get update && apt-get install -y \
     libsndfile1 \
     ffmpeg \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean
 
 WORKDIR /app
 
