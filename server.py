@@ -38,7 +38,7 @@ return jsonify({"status": "ok", "model": "BirdNET-Analyzer"})
 
 @app.route("/identify", methods=["POST"])
 def identify():
-“””
+"""
 Accepts a multipart audio file upload plus optional metadata.
 
 ```
