@@ -16,7 +16,7 @@ CORS(app)  # Allow requests from React Native / Expo dev server
 
 # Load the BirdNET model once at startup (heavy — ~500ms)
 
-print(“Loading BirdNET model…”)
+print("Loading BirdNET model…")
 analyzer = Analyzer()
 print(“BirdNET model loaded.”)
 
