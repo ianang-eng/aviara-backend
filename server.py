@@ -148,7 +148,7 @@ finally:
 
 # —————————————————————————
 
-if **name** == “**main**”:
-port = int(os.environ.get(“PORT”, 5000))
-print(f”Aviara BirdNET server running on port {port}”)
-app.run(host=“0.0.0.0”, port=port, debug=False)
+if **name** == "**main**":
+port = int(os.environ.get("PORT", 5000))
+print(f"Aviara BirdNET server running on port {port}")
+app.run(host="0.0.0.0", port=port, debug=False)
