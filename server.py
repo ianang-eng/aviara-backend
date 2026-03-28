@@ -1,4 +1,3 @@
-
 import os
 import tempfile
 import traceback
@@ -11,7 +10,7 @@ from flask_cors import CORS
 from birdnetlib import Recording
 from birdnetlib.analyzer import Analyzer
 
-app = Flask(**name**)
+app = Flask(__name__)
 CORS(app)  # Allow requests from React Native / Expo dev server
 
 # Load the BirdNET model once at startup (heavy — ~500ms)
@@ -28,7 +27,7 @@ print("BirdNET model loaded.")
 
 @app.route("/health", methods=["GET"])
 def health():
-return jsonify({"status": "ok", "model": "BirdNET-Analyzer"})
+    return jsonify({"status": "ok", "model": "BirdNET-Analyzer"})
 
 # —————————————————————————
 
@@ -38,10 +37,10 @@ return jsonify({"status": "ok", "model": "BirdNET-Analyzer"})
 
 @app.route("/identify", methods=["POST"])
 def identify():
-"""
+    """
 Accepts a multipart audio file upload plus optional metadata.
 
-```
+
 Form fields:
     audio       — audio file (wav, mp3, flac, m4a)
     lat         — float, player latitude  (optional but improves accuracy)
@@ -140,15 +139,15 @@ finally:
         os.unlink(tmp_path)
     except OSError:
         pass
-```
+"""
 
 # —————————————————————————
 
 # Entry point
 
 # —————————————————————————
-
-if **name** == "**main**":
-port = int(os.environ.get("PORT", 5000))
-print(f"Aviara BirdNET server running on port {port}")
-app.run(host="0.0.0.0", port=port, debug=False)
+"""
+if __name__ == "**main**":
+    port = int(os.environ.get("PORT", 5000))
+    print(f"Aviara BirdNET server running on port {port}")
+    app.run(host="0.0.0.0", port=port, debug=False)
