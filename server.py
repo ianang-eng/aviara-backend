@@ -18,7 +18,7 @@ CORS(app)  # Allow requests from React Native / Expo dev server
 
 print("Loading BirdNET model…")
 analyzer = Analyzer()
-print(“BirdNET model loaded.”)
+print("BirdNET model loaded.")
 
 # —————————————————————————
 
@@ -26,9 +26,9 @@ print(“BirdNET model loaded.”)
 
 # —————————————————————————
 
-@app.route(”/health”, methods=[“GET”])
+@app.route("/health", methods=["GET"])
 def health():
-return jsonify({“status”: “ok”, “model”: “BirdNET-Analyzer”})
+return jsonify({"status": "ok", "model": "BirdNET-Analyzer"})
 
 # —————————————————————————
 
@@ -36,7 +36,7 @@ return jsonify({“status”: “ok”, “model”: “BirdNET-Analyzer”})
 
 # —————————————————————————
 
-@app.route(”/identify”, methods=[“POST”])
+@app.route("/identify", methods=["POST"])
 def identify():
 “””
 Accepts a multipart audio file upload plus optional metadata.
